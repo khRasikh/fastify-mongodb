@@ -1,0 +1,30 @@
+{
+  "name": "my-fastify-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "fastify start -l info --options index.js",
+    "devtwo": "fastify start -l info --options index.js --watch --pretty-logs",
+    "mongo:start": "docker run --rm -d -p 27017:27017 --name mongo-todo mongo:4",
+    "mongo:stop": "docker stop mongo-todo",
+    "test": "tap --reporter=list --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fastify/env": "^3.0.0",
+    "@fastify/mongodb": "^5.0.0",
+    "dotenv": "^16.0.1",
+    "fastify": "^3.29.0",
+    "fastify-cli": "^3.1.0",
+    "mongo-clean": "^2.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16",
+    "pino-pretty": "^8.0.0",
+    "tap": "^16.2.0"
+  }
+}
